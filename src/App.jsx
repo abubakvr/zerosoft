@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -71,6 +71,7 @@ const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const appointmentFormRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -96,6 +97,14 @@ const App = () => {
     });
     AOS.refresh();
   }, []);
+
+  const scrollToAppointmentForm = () => {
+    if (appointmentFormRef.current) {
+      const yOffset = -100; // 120px from the top
+      const y = appointmentFormRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
+  };
 
   return (
     <div className="overflow-x-hidden">
@@ -123,7 +132,7 @@ const App = () => {
               </li>
             ))}
           </ul>
-          <button className="px-6 py-3 rounded-full font-bold text-white bg-orange-600 hover:opacity-90 w-full md:w-auto">
+          <button onClick={scrollToAppointmentForm} className="px-6 py-3 rounded-full font-bold text-white bg-orange-600 hover:opacity-90 w-full md:w-auto">
             Talk to an expert
           </button>
         </nav>
@@ -167,7 +176,7 @@ const App = () => {
             and Cloud Solutions for Enhanced Efficiency and Innovation.
           </p>
           <div className="w-2/3 md:w-full mx-auto flex flex-col md:flex-row justify-center gap-y-4 md:gap-x-5 mt-12 md:mt-12" data-aos="fade-up" data-aos-delay="200">
-            <button className="bg-orange-600 px-5 py-4 font-bold rounded-full w-full md:w-48">
+            <button onClick={scrollToAppointmentForm} className="bg-orange-600 px-5 py-4 font-bold rounded-full w-full md:w-48">
               Talk to an expert
             </button>
             <button className="border border-white px-5 py-4 font-bold rounded-full w-full md:w-48 backdrop-filter backdrop-blur-sm">
@@ -345,7 +354,7 @@ const App = () => {
             />
           </div>
         </div>
-        <div className="w-11/12 md:w-9/12 bg-white mx-auto mt-12 md:mt-20 shadow-xl quote-bg flex flex-col md:flex-row justify-end" data-aos="fade-up">
+        <div ref={appointmentFormRef} className="w-11/12 md:w-9/12 bg-white mx-auto mt-12 md:mt-20 shadow-xl quote-bg flex flex-col md:flex-row justify-end" data-aos="fade-up">
           <div
             className="w-full md:w-1/3 h-48 md:h-auto opacity-90 bg-cover bg-center"
             style={{
