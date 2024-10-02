@@ -2,20 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-hero-bg{
+.bg-hero-bg {
   height: 730px;
   background-image: url("./assets/hero-bg-line.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
-.quote-bg{
+.quote-bg {
   background-image: url("./assets/hero-bg-2.webp");
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 
-body{
+body {
   background-color: #FAFAFA;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .bg-hero-bg {
+    height: 700px;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg-hero-bg {
+    height: 760px;
+    background-size: cover;
+  }
 }
