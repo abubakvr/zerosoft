@@ -4,13 +4,13 @@
 
 .bg-hero-bg {
   height: 730px;
-  background-image: url("./assets/hero-bg-line.jpg");
+  background-image: url("/assets/hero-bg-line.webp");
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 .quote-bg {
-  background-image: url("./assets/hero-bg-2.webp");
+  background-image: url("/assets/hero-bg-2.webp");
   background-repeat: no-repeat;
   background-size: cover;
 
