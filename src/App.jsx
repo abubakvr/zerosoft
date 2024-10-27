@@ -379,7 +379,7 @@ const App = () => {
                   </Suspense>
                 </div>
                 <div className="">
-                  <div className="font-bold text-2xl">{item.value}+</div>
+                  <div className="font-bold text-2xl">{item.value}</div>
                   <div className="font-bold text-sm text-[#afafaf]">
                     {item.label}
                   </div>
