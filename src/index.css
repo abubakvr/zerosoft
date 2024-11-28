@@ -4,7 +4,7 @@
 
 .bg-hero-bg {
   height: 730px;
-  background-image: url("/assets/hero-bg-line.webp");
+  background-image: url("/assets/hero-bg-new.svg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -13,11 +13,10 @@
   background-image: url("/assets/hero-b2.webp");
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 body {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 @media screen and (max-width: 1024px) {

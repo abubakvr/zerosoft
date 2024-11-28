@@ -17,6 +17,8 @@ import WhoWeAre from "/assets/people-image.webp";
 
 import SpeedImage from "/assets/speed-image.svg";
 import TeamImage from "/assets/team-image.svg";
+import HeroImage from "/assets/hero-image-4.svg";
+import Logo from "/assets/zerosoft-image.png";
 
 import WorldImage from "/assets/world-image.png";
 
@@ -217,47 +219,22 @@ const App = () => {
     <>
       <div className="overflow-x-hidden">
         <div className="bg-black backdrop-filter backdrop-blur-sm">
-          <div className="bg-hero-bg  bg-black opacity-60 backdrop-filter backdrop-blur-sm"></div>
+          <div className="bg-hero-bg w bg-[#081539] opacity-100 backdrop-filter backdrop-blur-sm"></div>
         </div>
         <header
-          className={`w-full mx-auto ${
-            isScrolled ? "py-3" : "py-6"
-          } z-50 fixed top-0 left-0 right-0  text-white transition-all duration-300`}
+          className={`w-full mx-auto z-50 fixed top-0 left-0 right-0  text-white transition-all duration-300 ${
+            isScrolled
+              ? "backdrop-blur-xl z-50 bg-[#00000090]"
+              : "backdrop-filter"
+          }`}
         >
           <nav
-            className={`hidden md:flex flex-col md:flex-row justify-between py-4 items-center px-6 rounded-full bg-[#00000090] ${
-              isScrolled
-                ? "backdrop-blur-xl z-50 "
-                : "backdrop-filter backdrop-blur-sm "
-            } w-11/12 mx-auto`}
+            className={` w-10/12 lg:w-10/12  2xl:w-[1100px] hidden md:flex flex-col md:flex-row justify-between  ${
+              isScrolled ? "py-4" : "py-6"
+            } items-center mx-auto`}
           >
-            <a
-              href="/"
-              className="font-bold  ml-2 mb-4 md:mb-0 flex items-center"
-            >
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="flex items-center"
-              >
-                <path d="M32 4L4 32L32 60L60 32L32 4Z" fill="#2A2A2A" />
-                <path d="M32 14L14 32L32 50L50 32L32 14Z" fill="#FFFFFF" />
-                <text
-                  x="50%"
-                  y="50%"
-                  dominantBaseline="middle"
-                  textAnchor="middle"
-                  fill="#2A2A2A"
-                  fontSize="29"
-                  fontWeight="bold"
-                  className="mb-2"
-                >
-                  z
-                </text>
-              </svg>
+            <a href="/" className="font-bold mb-4 md:mb-0 flex items-center">
+              <img src={Logo} className="w-8 mr-1" alt="" />
               <span className="ml-1 text-white text-lg lg:text-xl">
                 ZEROSOFT
               </span>
@@ -321,38 +298,43 @@ const App = () => {
             </div>
           </nav>
         </header>
-        <main className="w-11/12 mx-auto pt-6 pb-6 absolute top-0 left-0 right-0 text-white">
-          <div className="text-center mt-36 pb-20 md:mt-52">
-            <h1
-              className="w-11/12 sm:w-7/12 md:w-9/12 lg:w-full mx-auto leading-tight text-3xl md:text-5xl lg:text-6xl font-bold"
-              data-aos="fade-up"
-            >
-              Accelerate Your Cloud
-              <br className="hidden md:block" /> and DevOps Journey
-            </h1>
-            <p
-              className="w-4/4 sm:w-7/12 md:w-9/12 lg:w-full mx-auto leading-relaxed mt-12 md:mt-12 text-lg md:text-xl lg:text-2xl font-light"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              Empowering Businesses with Scalable Cloud Solutions and{" "}
-              <br className="hidden lg:block" />
-              Efficient DevOps Practices for Enhanced Innovation and Growth.
-            </p>
-            <div
-              className="w-2/3 md:w-full mx-auto flex flex-col md:flex-row justify-center gap-y-4 md:gap-x-5 mt-12 md:mt-12"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <button
-                onClick={scrollToAppointmentForm}
-                className="bg-orange-500 hover:opacity-90 transition-colors duration-300 text-sm lg:text-lg px-4 lg:px-5 py-3 lg:py-4 font-bold rounded-full w-full md:w-48"
+        <main className="w-10/12 2xl:w-[1100px] mx-auto pt-6 pb-6 absolute top-0 left-0 right-0 text-white">
+          <div className="flex justify-between">
+            <div className="mt-36 pb-20 md:mt-52 w-1/2">
+              <h1
+                className="w-11/12 sm:w-7/12 md:w-9/12 lg:w-full mx-auto leading-tight text-3xl md:text-5xl lg:text-5xl font-bold"
+                data-aos="fade-up"
               >
-                Get Consultation
-              </button>
-              <button className="border border-white hover:bg-white hover:text-orange-500 transition-colors duration-300 text-sm lg:text-lg px-4 lg:px-5 py-3 lg:py-4 font-bold rounded-full w-full md:w-48 backdrop-filter backdrop-blur-sm">
-                Learn more
-              </button>
+                Accelerate Your Cloud
+                <br className="hidden md:block" /> and DevOps Journey
+              </h1>
+              <p
+                className="w-4/4 sm:w-7/12 md:w-9/12 lg:w-full mx-auto leading-relaxed mt-12 md:mt-6 text-lg md:text-xl lg:text-xl font-light"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Empowering Businesses with Scalable Cloud Solutions and{" "}
+                <br className="hidden lg:block" />
+                Efficient DevOps Practices for Enhanced Innovation and Growth.
+              </p>
+              <div
+                className="md:w-full mx-auto flex flex-col md:flex-row gap-y-4 md:gap-x-5 mt-12 md:mt-6"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <button
+                  onClick={scrollToAppointmentForm}
+                  className="bg-orange-500 hover:opacity-90 transition-colors duration-300 text-sm lg:text-lg px-4 text-white lg:px-5 py-3 lg:py-4 font-bold rounded-full w-full md:w-48"
+                >
+                  Get Consultation
+                </button>
+                <button className="border border-orange-500 hover:bg-white hover:text-orange-500 text-orange-500 transition-colors duration-300 text-sm lg:text-lg px-4 lg:px-5 py-3 lg:py-4 font-bold rounded-full w-full md:w-48 backdrop-filter backdrop-blur-sm">
+                  Learn more
+                </button>
+              </div>
+            </div>
+            <div className="w-1/2 flex items-center mt-20 justify-end">
+              <img src={HeroImage} className="w-full" alt="" />
             </div>
           </div>
         </main>
